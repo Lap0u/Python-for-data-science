@@ -1,0 +1,3 @@
+[build-system]
+requires = ["ft_package"]
+build-backend = "ft_package.build"

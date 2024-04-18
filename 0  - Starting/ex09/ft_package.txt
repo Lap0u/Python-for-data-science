@@ -1,0 +1,1 @@
+Un paquet qui utilise la list comprehension pour filtrer les éléments d'une liste
