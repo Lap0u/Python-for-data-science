@@ -11,9 +11,13 @@ def filterwords(str: str, max_len: int):
     print(ft_filter(lambda x: len(x) > max_len, split_str))
 
 
-if __name__ == "__main__":
+def main():
     assert len(sys.argv) == 3, "the arguments are bad"
     str = sys.argv[1]
     assert sys.argv[2].isdigit(), "the arguments are bad"
     max_len = int(sys.argv[2])
     filterwords(str, max_len)
+
+
+if __name__ == "__main__":
+    main()

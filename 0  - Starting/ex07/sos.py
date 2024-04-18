@@ -54,9 +54,13 @@ def sos(str):
     print(translated[:-1])
 
 
-if __name__ == "__main__":
+def main():
     assert len(sys.argv) == 2, "the arguments are bad"
-    str = sys.argv[1]
-    for letter in str:
+    user_input = sys.argv[1]
+    for letter in user_input:
         assert letter.isalnum() or letter.isspace(), "the arguments are bad"
-    sos(str)
+    sos(user_input)
+
+
+if __name__ == "__main__":
+    main()

@@ -38,9 +38,13 @@ def text_analyzer(text=None):
     print(f"- {sum(1 for elem in text if elem.isdigit())} digit(s)")
 
 
-if __name__ == "__main__":
+def main():
     assert len(sys.argv) < 3, "more than one argument is provided"
     if len(sys.argv) == 2:
         text_analyzer(sys.argv[1])
     else:
         text_analyzer()
+
+
+if __name__ == "__main__":
+    main()
