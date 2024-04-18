@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
 import sys
+from ft_filter import ft_filter
 
 
 def filterwords(str: str, max_len: int):
     """Returns the words in the string that are
     longer than the maxLen argument"""
     split_str = str.split(" ")
-    print([word for word in split_str if len(word) > max_len])
+    print(ft_filter(lambda x: len(x) > max_len, split_str))
 
 
 if __name__ == "__main__":
