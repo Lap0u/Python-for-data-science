@@ -1,0 +1,15 @@
+from load_image import ft_load
+
+print(ft_load("landscape.jpg"))
+print("----------------")
+print(ft_load("landscape.jepg"))
+print("----------------")
+print(ft_load("animal.jpeg"))
+print("----------------")
+print(ft_load("animal.jpg"))
+print("----------------")
+print(ft_load("tester.py"))
+print("----------------")
+print(ft_load(""))
+print("----------------")
+print(ft_load(12))
