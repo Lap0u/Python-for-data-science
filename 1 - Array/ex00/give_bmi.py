@@ -15,7 +15,7 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
     assert (
         weight.dtype == np.float64 or weight.dtype == np.int64
     ), "The weight array should contain only integers or floats"
-    bmi_list = weight / (height / 100) ** 2
+    bmi_list = weight / ((height / 100) ** 2)
     return bmi_list
 
 
@@ -26,4 +26,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     assert (
         bmi.dtype == np.float64 or bmi.dtype == np.int64
     ), "The BMI array should contain only integers or floats"
-    return bmi > limit
+    is_over = lambda x: x > limit
+    for i in bmi:
+        print(i, limit, is_over(i), i > limit)
+    return [is_over(i) for i in bmi]
