@@ -4,6 +4,8 @@ import numpy as np
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
     """Returns the BMI for each elements in the list.
     The formula for BMI is weight in kilograms divided by height in meters squared"""
+    assert isinstance(height, list), "The height should be a list"
+    assert isinstance(weight, list), "The weight should be a list"
     height = np.array(height)
     weight = np.array(weight)
     assert (
@@ -15,18 +17,17 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
     assert (
         weight.dtype == np.float64 or weight.dtype == np.int64
     ), "The weight array should contain only integers or floats"
-    bmi_list = weight / ((height / 100) ** 2)
-    return bmi_list
+    bmi_list = weight / (height**2)
+    return bmi_list.tolist()
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """Returns a list of boolean values where True indicates that the BMI is above the limit"""
+    assert isinstance(bmi, list), "The BMI should be a list"
+    assert isinstance(limit, int), "The limit should be an integer"
     bmi = np.array(bmi)
-    print(bmi.dtype, bmi)
     assert (
         bmi.dtype == np.float64 or bmi.dtype == np.int64
     ), "The BMI array should contain only integers or floats"
     is_over = lambda x: x > limit
-    for i in bmi:
-        print(i, limit, is_over(i), i > limit)
     return [is_over(i) for i in bmi]
