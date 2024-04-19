@@ -1,9 +1,10 @@
 import numpy as np
 
 
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(height: list[float], weight: list[float]) -> list[int | float]:
     """Returns the BMI for each elements in the list.
-    The formula for BMI is weight in kilograms divided by height in meters squared"""
+    The formula for BMI is weight in kilograms
+    divided by height in meters squared"""
     assert isinstance(height, list), "The height should be a list"
     assert isinstance(weight, list), "The weight should be a list"
     height = np.array(height)
@@ -22,12 +23,12 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
-    """Returns a list of boolean values where True indicates that the BMI is above the limit"""
+    """Returns a list of boolean values where True
+    indicates that the BMI is above the limit"""
     assert isinstance(bmi, list), "The BMI should be a list"
     assert isinstance(limit, int), "The limit should be an integer"
     bmi = np.array(bmi)
     assert (
         bmi.dtype == np.float64 or bmi.dtype == np.int64
     ), "The BMI array should contain only integers or floats"
-    is_over = lambda x: x > limit
-    return [is_over(i) for i in bmi]
+    return [i > limit for i in bmi]
