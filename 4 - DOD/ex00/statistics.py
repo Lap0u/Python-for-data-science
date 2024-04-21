@@ -1,10 +1,15 @@
-def ft_mean(data: list) -> None:
-    """Prints the mean of the given numbers.
-    The function can take any number of arguments and keyword arguments."""
+def get_mean(data: list) -> float:
+    """Returns the mean of the given numbers."""
     total = 0
     for value in data:
         total += value
-    print(f"mean : {total / len(data)}")
+    return total / len(data)
+
+
+def ft_mean(data: list) -> None:
+    """Prints the mean of the given numbers.
+    The function can take any number of arguments and keyword arguments."""
+    print(f"mean : {get_mean(data)}")
 
 
 def ft_median(data: list) -> None:
@@ -28,16 +33,18 @@ def ft_quartile(data: list) -> None:
 def ft_variance(data: list) -> None:
     """Prints the variance of the given numbers.
     The function can take any number of arguments and keyword arguments."""
-    pass
+    mean = get_mean(data)
+    square_sum = 0
+    for value in data:
+        square_sum += (value - mean) ** 2
+    variance = square_sum / len(data)
+    print(f"variance : {variance}")
 
 
 def ft_standard_deviation(data: list) -> None:
     """Prints the standard deviation of the given numbers.
     The function can take any number of arguments and keyword arguments."""
-    total = 0
-    for value in data:
-        total += value
-    mean = total / len(data)
+    mean = get_mean(data)
     variance = 0
     for value in data:
         variance += (value - mean) ** 2
