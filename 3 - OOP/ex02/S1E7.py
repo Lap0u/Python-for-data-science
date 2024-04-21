@@ -55,5 +55,5 @@ class Lannister(Character):
 
     @classmethod
     def create_lannister(cls, first_name, is_alive=True):
-        """Creates a Lannister object with the given parameters"""
+        """Creates a Lannister object with the given first_name and is_alive."""
         return cls(first_name, is_alive)
