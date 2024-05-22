@@ -26,7 +26,7 @@ class Baratheon(Character):
 
     @classmethod
     def create_baratheon(cls, first_name, is_alive=True):
-        """Creates a Baratheon object with the given first_name and is_alive."""
+        """Creates a Baratheon class with the given first_name and is_alive."""
         return cls(first_name, is_alive)
 
 
@@ -55,5 +55,5 @@ class Lannister(Character):
 
     @classmethod
     def create_lannister(cls, first_name, is_alive=True):
-        """Creates a Lannister object with the given first_name and is_alive."""
+        """Creates a Lannister class with the given first_name and is_alive."""
         return cls(first_name, is_alive)
