@@ -16,6 +16,7 @@ class Character(ABC):
 
     @abstractmethod
     def die(self):
+        """Abstract method that sets the is_alive attribute to False"""
         pass
 
 
